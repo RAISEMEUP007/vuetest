@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
+    '@sidebase/nuxt-auth',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -15,6 +16,33 @@ export default defineNuxtConfig({
     },
     //...
   ],
+  typescript: {
+    tsConfig: {
+      "extends": "./.nuxt/tsconfig.json"
+    }
+  },
+  auth: { 
+    isEnabled: true,
+    disableServerSideAuth: false,
+    baseURL: process.env.BASE_URL,
+    provider: {
+      type: 'local',
+      token: {
+        maxAgeInSeconds: 60*60*24
+      },
+      endpoints: {
+        signIn: { path: "api/user/login", method: "post" },
+      }
+      // trustHost: false,
+      // defaultProvider: '',
+      // addDefaultCallbackUrl: true
+    },
+    sessionRefresh: {
+        enablePeriodically: true,
+        enableOnWindowFocus: true,
+    }
+  },
+
   vite: {
     vue: {
       template: {
