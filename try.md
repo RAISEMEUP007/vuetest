@@ -1,9 +1,5 @@
 npx nuxi@latest init pmc3
 
-yarn add vuex
-
-yarn add @sidebase/nuxt-auth
-
 yarn add vuetify
 
 yarn add vite-plugin-vuetify
@@ -48,3 +44,7 @@ export default defineNuxtPlugin((app) => {
     },
   },
 ```
+
+yarn add vuex
+
+yarn add @sidebase/nuxt-auth
