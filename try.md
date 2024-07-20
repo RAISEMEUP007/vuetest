@@ -48,3 +48,24 @@ export default defineNuxtPlugin((app) => {
 yarn add vuex
 
 yarn add @sidebase/nuxt-auth
+
+yarn add sass
+
+yarn add moment
+
+`copy tsconfig.base.json`
+
+`update nuxt.config.ts`
+
+`copy auth.ts in plugins`
+
+``` typescript
+export default defineNuxtPlugin((nuxtApp) => {
+  return {
+    provide: {
+      auth: useAuth(),
+    }
+  }
+})
+```
+
