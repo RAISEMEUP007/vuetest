@@ -48,3 +48,7 @@ export default defineNuxtPlugin((app) => {
 yarn add vuex
 
 yarn add @sidebase/nuxt-auth
+
+yarn add sass
+
+yarn add moment
